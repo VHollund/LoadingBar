@@ -29,7 +29,4 @@ class LoadingBar:
             print()
 
 
-if __name__ == '__main__':
-    k=LoadingBar(20, "█")
-    for x in range(0, 101):
-        k.LoadingBar(x)
+
