@@ -46,6 +46,3 @@ class LoadingBar:
         print(content, end="\r")
         if percent == 100:
             print()
-
-
-
