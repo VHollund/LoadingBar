@@ -21,7 +21,7 @@ bcolors = {
 class LoadingBar:
     def __init__(self, width=10, fill="█", color="green", emptycolor="", start="", end=""):
         if color in bcolors.keys():
-            self.color= bcolors[color]
+            self.color = bcolors[color]
         else:
             self.color = bcolors["green"]
         if emptycolor in bcolors.keys():
@@ -35,7 +35,7 @@ class LoadingBar:
         self.start = start
         self.end = end
 
-    def LoadingBar(self, percent):
+    def update(self, percent):
         content = self.start + self.color
         for i in range(0, self.width):
             if i*self.multiplier < percent:
@@ -43,6 +43,6 @@ class LoadingBar:
             else:
                 content += self.emptycolor + " " + bcolors["ENDC"] if self.emptycolor != "" else " "
         content += bcolors["ENDC"] + self.end + str(percent) + "%"
-        print("\r",content, end="")
+        print("\r", content, end="")
         if percent == 100:
             print()
