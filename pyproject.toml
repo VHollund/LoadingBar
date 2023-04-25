@@ -15,3 +15,8 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/VHollund/LoadingBar"
+"Bug Reports" = "https://github.com/VHollund/LoadingBar/issues"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
