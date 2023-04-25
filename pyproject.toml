@@ -1,6 +1,6 @@
 [project]
 name = "LoadingBar_Py_Diggs"
-version = "1.0.0"
+version = "0.1.0"
 authors = [
   { name="Velte Hollund", email="vetlehoo@gmail.com" },
 ]
