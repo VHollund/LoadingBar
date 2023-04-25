@@ -43,6 +43,6 @@ class LoadingBar:
             else:
                 content += self.emptycolor + " " + bcolors["ENDC"] if self.emptycolor != "" else " "
         content += bcolors["ENDC"] + self.end + str(percent) + "%"
-        print(content, end="\r")
+        print("\r",content, end="")
         if percent == 100:
             print()
