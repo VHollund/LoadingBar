@@ -19,7 +19,25 @@ bcolors = {
 }
 
 class LoadingBar:
-    def __init__(self, width=10, fill="█", color="green", emptycolor="", start="", end=""):
+    def __init__(self,
+                 width: int = 10,
+                 fill: str = "█",
+                 color: str = "green",
+                 emptycolor: str = "",
+                 start: str = "",
+                 end: str = ""
+                 ) -> None:
+        """
+        A loading bar with customizable width, fill character, and color.
+
+        Args:
+            width (int): The width of the loading bar.
+            fill (str): The character used to fill the loading bar.
+            color (str): The color of the loading bar.
+            emptycolor (Optional[str]): The color of the empty space in the loading bar (default: None).
+            start (str): The string to print before the loading bar (default: "").
+            end (str): The string to print after the loading bar (default: "").
+        """
         if color in bcolors.keys():
             self.color = bcolors[color]
         else:
@@ -35,14 +53,20 @@ class LoadingBar:
         self.start = start
         self.end = end
 
-    def update(self, percent):
-        content = self.start + self.color
+    def update(self, percent) -> None:
+        """
+        Update the loading bar to the given percentage.
+
+        Args:
+            percent (int): The percentage to update the loading bar to.
+        """
+        content = f"{self.start}{self.color}"
         for i in range(0, self.width):
             if i*self.multiplier < percent:
                 content += self.fill
             else:
-                content += self.emptycolor + " " + bcolors["ENDC"] if self.emptycolor != "" else " "
-        content += bcolors["ENDC"] + self.end + str(percent) + "%"
+                content += f"{self.emptycolor if self.emptycolor!='' else ''} {bcolors['ENDC'] if self.emptycolor != '' else ''}"
+        content += f"{bcolors['ENDC']}{self.end}{str(percent)} %"
         print("\r", content, end="")
-        if percent == 100:
+        if percent >= 100:
             print()
