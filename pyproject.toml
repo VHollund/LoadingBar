@@ -2,7 +2,7 @@
 name = "LoadingBar_Py_Diggs"
 version = "0.1.0"
 authors = [
-  { name="Velte Hollund", email="vetlehoo@gmail.com" },
+  { name="Vetle Hollund", email="vetlehoo@gmail.com" },
 ]
 description = "A Simple loading bar for python."
 readme = "README.md"

@@ -4,7 +4,6 @@ on:
   release:
     types: [created]
 
-jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
