@@ -27,6 +27,6 @@ bar = LoadingBar(width=20, fill="=", color="yellow", emptycolor="grey", start="P
 bar.update(50)
 ```
 output:
-```diff
-Processing: |========          | Done! 50%
-```
+<div style="background-color:#000000; ">
+<pre style="font-family: Courier; background-color:#33475b;">Processing: |<span style="color:green;">========<span>          | Done! 50% </pre>
+<div>
