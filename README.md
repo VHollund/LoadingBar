@@ -9,7 +9,7 @@ By Vetle Hollund
 pip install LoadingBar_Py_Diggs
 ```
 
-## Example
+## Example 1
 ```python
 from loadingbar import LoadingBar
 
@@ -20,4 +20,13 @@ if __name__ == '__main__':
         time.sleep(0.1)
 ```
 
-
+## Example 2
+```python
+from loadingbar import LoadingBar
+bar = LoadingBar(width=20, fill="=", color="yellow", emptycolor="grey", start="Processing: |", end="| Done!")
+bar.update(50)
+```
+output:
+```diff
+Processing: |========          | Done! 50%
+```

@@ -30,13 +30,12 @@ class LoadingBar:
         """
         A loading bar with customizable width, fill character, and color.
 
-        Args:
-            width (int): The width of the loading bar.
-            fill (str): The character used to fill the loading bar.
-            color (str): The color of the loading bar.
-            emptycolor (Optional[str]): The color of the empty space in the loading bar (default: None).
-            start (str): The string to print before the loading bar (default: "").
-            end (str): The string to print after the loading bar (default: "").
+        :param width: The width of the loading bar in characters (default: 10).
+        :param fill: The character used to fill the loading bar (default: "█").
+        :param color: The color used for the filled portion of the loading bar (default: "green").
+        :param emptycolor: The color used for the unfilled portion of the loading bar (default: "").
+        :param start: A string to prepend to the start of the loading bar (default: "").
+        :param end: A string to append to the end of the loading bar (default: "").
         """
         if color in bcolors.keys():
             self.color = bcolors[color]
@@ -60,6 +59,7 @@ class LoadingBar:
         Args:
             percent (int): The percentage to update the loading bar to.
         """
+
         content = f"{self.start}{self.color}"
         for i in range(0, self.width):
             if i*self.multiplier < percent:
